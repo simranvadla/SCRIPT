@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="boll.jpg" id="boll" style="width:50px">
+    <script>
+        let i=0;
+        let b = document.body;
+        b.onkeydown =
+        b.onkeyup =
+        b.onkeypress =b
+        function handle(e){
+            boll.style.position="absolute"
+            if(e.key== "ArrowRight"){
+                i=i+50;
+                boll.style.left =i+"px";
+            }
+        };
+    </script>
+</body>
+</html>

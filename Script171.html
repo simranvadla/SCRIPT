@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id=""head> Drag the boll</h1>
+    <div id="d1" style="z-index:1000";>
+        <img draggeble="true" src="./boll.jpg" id="boll"/></div>
+    <script>
+        boll.style.position ="absolute";
+        boll.ondragstart = function (event){
+            head.innerHTML = "Drag Dtarted";
+        };
+        boll.ondrag =function(event){
+            head.ineerHTML ="Drag Ended";
+            boll.style.left = event.pageX-100 + "px";
+            boll.style.left = event.pageY-100 + "px";
+        }
+        target.ondragenter =function (event){
+            console.log("Target Achived");
+        };
+    </script>
+</body>
+</html>

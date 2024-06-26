@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sales Report</h1>
+    <p>Vehicle<label id="v"</label></p>
+    <p>Car<label id="c"</label></p>
+    <p>Brand<label id="b"</label></p>
+        <br>
+        
+        <div id="Vehicle" onclick="fv()">
+            Sell a Vehicle</div>
+            <div id="Car" onclick="fc()">
+                Sell a Car  </div>
+                <div id="ford" onclick="fb()">
+                     Sell a ford</div>
+                </div>
+           
+    <script>
+        let vNum = 0;
+        let cNum = 0;
+        let bNum = 0;
+
+        const fv = ()=>{
+            vNum +=1;
+            v.innerHTML = vNum;
+        };
+
+        const fc =()=>{
+            cNum +=1;
+            c.innerHTML = cNum;
+        }
+             const fb =()=>{
+            bNum +=1;
+            b.innerHTML = bNum;
+        }
+    </script>            
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgcontainer{
+            background-image: linear-gradient(to right,rgba(248, 165, 248, 0.678),rgba(51, 255, 0, 0.582),skyblue);
+        }
+        .main{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: auto;
+        width: 800px;
+        align-items: center;
+        justify-content: center;
+        }
+        div .container{ 
+            width: 200px;
+            border: 5px solid rgb(69, 30, 243);
+            padding: 5px;
+            margin: 5px;
+            border-radius: 15px;
+            display: inline-flex;
+            flex-direction: column;
+        }
+        .container:hover{
+            border: 10px solid rgb(106, 239, 228);
+            background-color: rgb(244, 195, 33);
+    
+        }
+        .heading{
+            text-align: center;
+            font-size:60px;
+            font-style: bold;
+            color:rgba(97, 30, 222, 0.908);
+            
+        }
+        .heading2{
+            text-align: center;
+            font-size:60px;
+            font-style: bold;
+            color:rgb(29, 29, 240);
+            
+        }
+        .heading img{
+            float: right;
+            height:60px;
+            width:60px ;
+            border-radius: 30px;
+        }
+        .girl{
+            border-radius: 30px;
+           
+        }
+        #cart-count{
+            float:right;
+            display: inline;
+            background-color: rgb(59, 62, 241);
+            font-size:25px;
+            margin-left: 70px;
+            color:white;
+            border-radius: 30px;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-bottom: 160px;
+        
+        }
+        
+        
+    </style>
+</head>
+<body class="bgcontainer">
+    <div>
+    <div class="heading">DENIMS<img src="Cart.jpg" onclick="clickcart()" class="girl" />
+     <span id="cart-count">0</span>
+    </div>
+   
+</div>
+<hr>
+    <div id="products" class="main"></div>
+    <div id="header" > <h4 class="heading2" >My Cart</h4><hr>
+    <div id="mycart" class="hidden" ></div>
+    <div id="order" class="hidden1" ></div>
+</div>
+        <script>
+            
+            let product=[
+                {
+                    name:"Denims",
+                    description: "This is manufactured by JcraftEco in INDIA.",
+                    price:3000,
+                    image: "Image1.jpg"
+                },
+                {
+                    name:"Denim",
+                    description: "This is manufactured by JcraftEco in INDIA.",
+                    price:4000,
+                    image:"Images2.jpg"
+                },
+                {
+                    name:"Denim",
+                    description: "This is manufactured by JcraftEco in INDIA.",
+                    price:4500,
+                    image:"images3.jpg"
+                },
+                {
+                    name:"Denim",
+                    description: "This is manufactured by JcraftEco in INDIA.",
+                    price:6000,
+                    image:"images4.jpg"
+                },
+                {
+                    name:"Denim",
+                    description: "This is manufactured by JcraftEco in INDIA.",
+                    price:7500,
+                    image:"images5.jpg"
+                },
+                {
+                    name:"Denim",
+                    description: "This is manufactured by JcraftEco in INDIA.",
+                    price:9000,
+                    image:"images6.jpg"
+                    
+                }
+            ];
+            
+            let cart=[];
+
+            let msg="";
+        product.forEach((value,index)=> {
+            msg=msg+
+            `<div class="container">
+                <div><img src=${value.image} width=200px height=150px></div>
+                <div id="name">${value.name}</div>
+                <div>${value.description}</div>
+                <div>${value.price}</div>
+                
+                
+
+                <div><button onclick="myClick(${index})" style="width: 50px;height: 30px;background-color:black;color:white;">Add</button></div>
+            </div>`;
+        });
+        products.innerHTML=msg;
+
+        
+
+        let total=cart.reduce((sum, value)=>{
+            return sum+ value.price* value.qty;
+        },0);
+        order.innerHTML="<b>Order Value:</b> "+total;
+         // function clickcart(){
+             // document.getElementById("header").style.display="";
+             // document.getElementById("mycart").style.display="";
+             // document.getElementById("order").style.display="";
+         // }
+         
+        let cartCount=0;
+       const myClick=(x)=>{
+       
+        //  for(i=0;i<product.length;i++){
+        //  cart[x]=product[x];
+
+        //  cartCount=cartCount+1;
+        //  cart[x].quantity=cartCount
+ 
+//    console.log(cart.length);
+//      console.log(cart);
+     
+
+    if(cart[x]==null){
+        cart[x]=product[x];
+        cart[x].quantity=1;
+    }
+    else{
+        cart[x].quantity= cart[x].quantity+1;
+    }
+     let txt="";
+        cart.forEach(value => {
+            txt=txt+
+            `<div class="container">
+                <div><img src=${value.image} width=50px height=80px></div>
+                <div id="name">${value.name}</div>
+                <div>${value.description}</div>
+                <div>${value.price}</div>
+            </div> `
+        });
+        mycart.innerHTML=txt;
+  document.getElementById("cart-count").innerText=cartCount;
+  console.log(cart);    
+    }
+  </script>
+   
+</body>
+</html>

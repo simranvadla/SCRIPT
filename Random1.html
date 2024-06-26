@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Image</title>
+</head>
+<body>
+<h2>Random Items Images</h2>
+<img id="randomImage" src="" alt="Random Image">
+<script>
+
+    var imageUrls = [
+    "Tomato.jpg",
+    "BANANA.jpg",
+    "Brinjal.jpg",
+    "Beans.jpg",
+    "Cabbage.jpg",
+    "Image1.jpg",
+    "Ladies.jpg",
+    "Boll.jpg",
+    "Apple.jpg",
+    "Orange.jpg",
+    "images4.jpg",
+    "Spinach.jpg",
+    "SpinachCHI.jpg",
+    "Raagi.jpg",
+    "Barly.jpg",
+];
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  function displayRandomImage() {
+    var randomIndex = getRandomInt(0, imageUrls.length - 1);
+    var randomImageUrl = imageUrls[randomIndex];
+    document.getElementById("randomImage").src = randomImageUrl;
+  }
+  displayRandomImage();
+
+</script>
+</body>
+</html>

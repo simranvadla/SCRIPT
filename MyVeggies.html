@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        width: 1200px;
+        margin: auto;
+      }
+      .divMenu {
+        width: 150px;
+        padding: 30px;
+        line-height: 30px;
+        border-right: dashed 1px;
+        align-items: center;
+      }
+      .divProducts {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        column-gap: 40px;
+        padding: 30px;
+      }
+      .divProduct {
+        width:300px;
+        text-align: center;
+
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My DESI Store</h1>
+    <hr>
+    <div class="container">
+      <div class="divMenu"></div>
+      <div class="divProducts"></div>
+    </div>
+    <script>
+      let divMenu = document.querySelector(".divMenu");
+      let divProducts = document.querySelector(".divProducts");
+      let categories = [
+        { id: 1, name: "Fruits" },
+        { id: 2, name: "Vegetables" },
+        { id: 3, name: "Grains" },
+      ];
+      let products = [
+        { id: 1, name: "Tomato", image:"Tomato.jpg", price: 60, cid: 2 },
+        { id: 1, name: "Cabbage",image:"Cabbage.jpg", price: 80, cid: 2 },
+        { id: 1, name: "Apple",image:"Apple.jpg", price: 120, cid: 1 },
+        { id: 1, name: "Orange",image:"Orange.jpg", price: 140, cid: 1 },
+        { id: 1, name: "Barley",image:"Barly.jpg", price: 140, cid: 3 },
+        { id: 1, name: "Raagi",image:"Raagi.jpg", price: 140, cid: 3 },
+        { id: 1, name: "Banana",image:"BANANA.jpg", price: 140, cid: 1 },
+        { id: 1, name: "Carrot",image:"Carrot.jpg", price: 140, cid: 2 },
+        { id: 1, name: "Spinach",image:"Spinach.jpg", price: 140, cid: 2 },
+        { id: 1, name: "Chains Spinach",image:"SpinachCHI.jpg", price: 140, cid: 2 },
+        { id: 1, name: "Benddakai",image:"Ladies.jpg", price: 140, cid: 2 },
+        { id: 1, name: "Chikkudikai",image:"Beans.jpg", price: 140, cid: 2 },
+              ];
+      const showMenu = () => {
+        let txt = "";
+        categories.forEach((value) => {
+          txt += `
+          <li onclick='showProducts(${value.id})'>${value.name}</li>
+        `;
+        });
+        divMenu.innerHTML = txt;
+      };
+      const showProducts = (id) => {
+        let txt = "";
+        products.forEach((value) => {
+          if (value.cid == id) {
+            txt += `<div class='divProduct'>
+            <div><img width='100px' src=${value.image}></div>
+            <div>${value.name}</div>
+            <div>${value.price}</div>
+            <div><button>Add</button></div>
+            </div>`;
+          }
+        });
+        divProducts.innerHTML = txt;
+      };
+      showMenu();
+      // showProducts();
+    </script>
+  </body>
+</html>

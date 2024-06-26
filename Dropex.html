@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Name Dropdown Example</title>
+
+<style>
+    #nameInput {
+        margin-bottom: 10px;
+    }
+</style>
+
+</head>
+<body>
+
+<h2>Enter a name:</h2>
+<input type="text" id="nameInput">
+<button onclick="addName()">Add Name</button>
+
+<h2>Names:</h2>
+<select id="nameDropdown">
+    <!-- Dropdown options will be added dynamically -->
+</select>
+<script>
+    function addName() {
+        var nameInput = document.getElementById("nameInput");
+        var name = nameInput.value.trim();
+        
+        if (name !== "") {
+            var dropdown = document.getElementById("nameDropdown");
+            var option = document.createElement("option");
+            option.text = name;
+            dropdown.add(option);
+            nameInput.value = ""; // Clear the input field after adding
+        } else {
+            alert("Please enter a name!");
+        }
+    }
+</script>
+</body>
+</html>

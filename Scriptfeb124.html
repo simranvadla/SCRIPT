@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        div .container{
+            border:solid 1px black;
+            height:250px;
+            width:200px;
+            padding: 50px;
+            margin:30px;
+            float:left;
+            text-align: center;
+        }
+        .heading{
+            text-align: center;
+            font-size:60px;
+            font-style: italic;
+            color:cadetblue
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">My Cart</h1>
+    <div id="products"  </div>
+    <script>
+        let cart=[
+            {
+                name:"Apple",
+            price:1,
+            description:"This is a fruit",
+            image:"Tomato.jpg"
+            },
+            {
+                name:"Pineapple",
+            price:2,
+            description:"This is a fruit",
+            image:"Tomato.jpg"
+            },
+            {
+                name:"Banana",
+            price:3,
+            description:"This is a fruit",
+            image:"Tomato.jpg"
+            },
+            {
+                name:"Spinach",
+            price:4,
+            description:"This is a leafy vegetable",
+            image:"Tomato.jpg"
+            },
+            {
+                name:"Brinjal",
+            price:5,
+            description:"This is a vegetable",
+            image:"Tomato.jpg"
+            },
+            {
+                name:"Tomato",
+            price:6,
+            description:"This is a vegetable",
+            image:"Tomato.jpg"
+            },
+         ];
+         let msg="";
+         let filtered=cart.filter((value)=>
+         {
+            return (value.price>4);
+         },0);
+        
+         filtered.forEach((value)=>
+         {
+            
+            msg=msg+`<h1 class="heading"></h1>`;
+
+             msg=msg + `<div class="container">
+                <p><img src=${value.image} width=200px height=100px></p><br>${value.name}<br>${value.description}<br>${value.price}<br><br><button>Add Cart</button></div>`;
+         });
+         products.innerHTML=msg;
+        
+         </script>
+</body>
+</html>

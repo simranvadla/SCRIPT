@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        div.container{
+            border: solid 1px black;
+            height: 300px;
+            width: 300px;
+            padding:10px;
+            margin: 50px;
+        }
+
+    </style>
+</head><body>
+    <div><h1>TOMATO SHOW OFF WEB SITE</h1></div>
+<div id="products" class="main"></div>
+<script>
+
+    let product=[
+        {
+            name:"Tomato is a Fruit",
+            description:"Made in India",
+            price:200,
+            image:"Tomato.jpg",
+        },
+        {
+            name:"Tomato is a hybrid",
+            description:"Made in India",
+            price:300,
+            image:"Tomato.jpg",
+        },
+        {
+            name:"Tomato is in yellow",
+            description:"Made in India",
+            price:200,
+            image:"Tomato.jpg",
+        },
+        {
+            name:"Tomato is in yellowgreen",
+            description:"Made in India",
+            price:400,
+            image:"Tomato.jpg",
+        },
+        {
+            name:"Tomato is a Aqua",
+            description:"Made in India",
+            price:500,
+            image:"Tomato.jpg",
+        },
+        {
+            name:"Tomato is a Herit",
+            description:"Made in India",
+            price:200,
+            image:"Tomato.jpg",
+        },
+    ];
+
+    let msg="";
+    product.forEach((value) => {
+        msg=msg +  `<div class="container">
+            <p><img width=200px src="${value.image}"</p>
+           <p> ${value.name}</p>
+           <p>${value.description}</p>
+           <p>${value.price}</p>
+           </div>`;
+    });
+    {
+
+    }
+    products.innerHTML=msg;
+    </script>
+</body>
+</html>

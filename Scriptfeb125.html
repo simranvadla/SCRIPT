@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: auto;
+            width: 100%;
+        }
+        div .container{
+            border: solid 1px black;
+            background-color: rgb(250, 200, 232);
+            height:220px;
+            width:300px;
+            padding: 60px;
+            margin: 30px;
+            border-radius: 30%;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div><h1>Star Bucks</h1></div>
+    <div id="products" class="main"></div>
+    <div><h1>My Cart</h1></div>
+    <div id="mycart"></div>
+    <div id="order"></div>
+    <script>
+
+let product = [
+    {name: "apple",
+     description: "this is dummy text" ,
+      price: 3, 
+      image: "Tomato.jpg", button:"Add",},
+    {name: "mango",
+     description: "this is dummy text" , 
+    price: 4,
+     image: "Tomato.jpg", button:"Add",},
+    {name: "banana",
+     description: "this is dummy text" ,
+     price: 5, 
+     image: "Tomato.jpg",button:"Add",},
+    {name: "orange",
+     description: "this is dummy text" ,
+     price: 6,
+      image: "Tomato.jpg",button:"Add",},
+    {name: "papaya", 
+    description: "this is dummy text" , 
+    price: 5, 
+    image: "Tomato.jpg",button:"Add",},
+    {name: "grapes",
+     description: "this is dummy text" ,
+     price: 6,
+      image: "Tomato.jpg",button:"Add",},
+
+];
+ let cart = [
+    {
+        name: "Apple",
+        description:"This is a dummy text",
+        price: 3,
+        qty:2,
+    },
+    {
+        name: "Mango",
+        description:"This is a dummy text",
+        price: 2,
+        qty:3
+    }
+ ];
+
+
+
+        let msg = "";
+        let newarr=product.filter((value) => {
+            return value.price >4
+        });
+        newarr.forEach ((value) => {
+            msg = msg+ `<div class="container"><div><img width="300px" src=${value.image}></div>
+                <div>${value.name}</div>
+                <div>${value.description}</div>
+                <div>${value.price} </div>
+                <div><button>${value.button}</button></div>
+            </div>`;
+
+        }) ;
+        products.innerHTML = msg;
+        let txt="";
+       
+        cart.forEach ((value) => {
+            txt = txt+`<ul> <li> ${value.name}--${value.price}-${value.qty} </li></ul>`;
+
+        }) ;
+        mycart.innerHTML = txt;
+
+
+        let total=cart.reduce((sum,value) => {
+            return sum + value.price * value.qty;
+        },0)
+        order.innerHTML="Order Value" + total
+        {
+
+        }
+
+    </script>
+</body>
+</html>

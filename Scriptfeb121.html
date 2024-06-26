@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example-1</title>
+    <style>
+         div .container
+         {
+            border: 5px dashed;
+            background-color: rgba(234, 255, 127, 0.925);
+            height: 100px;
+            width: 100px;
+            padding: 20px;
+            grid-row: 20px;
+            
+          align-items: right;
+
+        }
+    </style>
+
+</head>
+<body>
+    <div id="products"></div>
+    <script>
+let product = [
+               {
+                name: "Moon",
+                description: "we can see the moon at the night only",
+                price: 32,
+                Image:"C:\Users\LENOVO-V15\Downloads\images (3).jfif" 
+               },
+               {
+                name: "statchu",
+                description: "it will shows the some insparation",
+                price: 32,
+                Image: "C:\Users\LENOVO-V15\Downloads\download (8).jfif",
+               },
+               {
+                name: "ice mounts",
+                description: "the ice mounts is see only himachal pradash",
+                price: 32,
+                Image: "C:\Users\LENOVO-V15\Downloads\istockphoto-485966046-612x612.jpg",
+               },
+               {
+                name: "nature",
+                description: "the nature will se very good for thr eyes",
+                price: 32,
+                Image: "C:\Users\LENOVO-V15\Downloads\istockphoto-1404885250-1024x1024.jpg",
+               },
+               {
+                name: "collage",
+                description: "i've completed b.tech this collage",
+                price: 85000,
+                Image: "C:\Users\LENOVO-V15\Downloads\GEC_MAIN_BUILDING_LATEST.jpg",
+               },
+               {
+                name: "temple",
+                description: "this is a devitional time",
+                price: 0,
+                Image: "C:\Users\LENOVO-V15\Downloads\pexels-simon-berger-1266810.jpg",
+               },
+              ];
+              let msg= "";
+              product.forEach((value) => {
+                msg = msg + `<div class='container'> ${value.name}-${value.image}-${value.description}-${value.price} </div> `
+              });
+              {
+
+              }
+                 products.innerHTML = msg;
+    </script>
+</body>
+</html>

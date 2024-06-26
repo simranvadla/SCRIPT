@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+<h1>Login page</h1>
+User name:<input type="text"><br><br><br>
+Password:<input type="password" id="pass" ><br>
+<input type="checkbox" id="check" > 
+<label>Show Password</label>
+</center>    
+<script>
+    document.getElementById("pass");
+    document.getElementById("check");
+    check.addEventListener("click",function()
+    {
+        if(check.checked)
+        {
+            pass.type="text"; 
+        }
+     else{
+        pass.type="password";
+        }
+    })
+</script>
+</body>
+</html>

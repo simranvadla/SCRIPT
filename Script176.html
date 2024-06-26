@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LOGIN SCREEN</h1>
+    <p><input type="text" id="user" placeholder="Enter Username"></p>
+    <p><input type="password" placeholder="Enter password"></p>
+    <p><input type="checkbox" id="chk" onclick="setCookie()">Remember me</p>
+    <p><button>Login</button></p>
+    <script>
+             const toggleCookie =() =>{
+            if (chk.checked){
+                //save user and pass cookie
+                console.log("created cookie");
+            }
+            else{
+                //delete cookie
+                console.log("deleted cookie");
+            }
+        };
+        const getCookie =() =>{
+            user.value ="Simran";
+            pass.value ="pass";
+            chk.checked =true;
+        };
+    </script>
+</body>
+</html>
